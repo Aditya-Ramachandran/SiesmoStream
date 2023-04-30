@@ -16,5 +16,15 @@ response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format
 
 st.sidebar.header('SiesmoStream')
 option = st.sidebar.radio('Select', ['QuakeView', 'QuakeEdu', 'About'])
-st.sidebar.markdown('To learn more about us')
 
+# choosing what to do based on selected radio buttons
+if option == 'QuakeView':
+    st.sidebar.markdown('*Earthquake visualization on an interactive map*')
+
+
+if option == 'QuakeEdu':
+    st.sidebar.markdown('*Learn earthquake preparedness tips and science behind seismic events*')
+
+
+if option == 'About':
+    st.sidebar.markdown('*Learn more about the project*')
