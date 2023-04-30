@@ -26,7 +26,10 @@ option = st.sidebar.radio('Select', ['QuakeView', 'QuakeEdu', 'About'])
 if option == 'QuakeView':
     st.sidebar.markdown('*Earthquake visualization on an interactive map*')
     st.header('QuakeView')
-    loader_obj.load_clean_data(response)
+    final = loader_obj.load_clean_data(response)
+
+    st.sidebar.selectbox('Visualize On', ['Date', 'City/State'])
+
 
     
 
