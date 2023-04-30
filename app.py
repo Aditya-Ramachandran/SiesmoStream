@@ -29,6 +29,7 @@ first_day_month = today.replace(day=1)
 year = date(date.today().year, 1, 1)
 
 
+
 st.sidebar.header('SiesmoStream')
 option = st.sidebar.radio('Select', ['QuakeView', 'QuakeEdu', 'About'])
 
@@ -58,6 +59,17 @@ if option == 'QuakeView':
         if date_option == 'This Year':
             response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(year, today))
             loader_obj.load_clean_data(response)
+
+        if date_option == 'Custom Date Range':
+            st.sidebar.markdown("<p style='color: orange;'>Note: If you select a wide range of dates that span several years, the data may not be displayed.</p>", unsafe_allow_html=True)
+            start_date = st.date_input('Choose Start Date', max_value=today)
+            end_date = st.date_input('Choose End Date', min_value=start_date, max_value=today)
+            if end_date <= start_date:
+                st.warning('Please choose an end date after the start date.')
+                
+            response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(start_date, end_date))
+            loader_obj.load_clean_data(response)
+            
 
 
 
