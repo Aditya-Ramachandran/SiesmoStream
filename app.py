@@ -5,6 +5,8 @@ import numpy as np
 from pandas import json_normalize
 import datetime
 import streamlit as st
+from datetime import date
+
 
 from loader import GetDataFromAPI
 loader_obj = GetDataFromAPI()
@@ -24,7 +26,7 @@ today = dt.date.today()
 week_ago = today - dt.timedelta(days=7)
 yesterday = today - dt.timedelta(days=1)
 first_day_month = today.replace(day=1)
-
+year = date(date.today().year, 1, 1)
 
 
 st.sidebar.header('SiesmoStream')
@@ -44,15 +46,17 @@ if option == 'QuakeView':
             response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(yesterday, today))
             loader_obj.load_clean_data(response)
 
-
         # String format used to put today's date and a date from week ago as params to the API
         if date_option == 'This Week':
             response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(week_ago, today))
             loader_obj.load_clean_data(response)
         
-
         if date_option == 'This Month':
             response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(first_day_month, today))
+            loader_obj.load_clean_data(response)
+
+        if date_option == 'This Year':
+            response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(year, today))
             loader_obj.load_clean_data(response)
 
 
