@@ -61,15 +61,20 @@ if option == 'QuakeView':
             loader_obj.load_clean_data(response)
 
         if date_option == 'Custom Date Range':
+            btn = st.sidebar.button('Visualize')
             st.sidebar.markdown("<p style='color: orange;'>Note: If you select a wide range of dates that span several years, the data may not be displayed.</p>", unsafe_allow_html=True)
             start_date = st.date_input('Choose Start Date', max_value=today)
             end_date = st.date_input('Choose End Date', min_value=start_date, max_value=today)
             if end_date <= start_date:
                 st.warning('Please choose an end date after the start date.')
-                
-            response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(start_date, end_date))
-            loader_obj.load_clean_data(response)
-            
+
+            if btn == True:   
+                try: 
+                    response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(start_date, end_date))
+                    loader_obj.load_clean_data(response)
+                except:
+                    st.error('Data for the selected date range isn\'t available.')
+        
 
 
 
