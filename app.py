@@ -10,6 +10,8 @@ from loader import GetDataFromAPI
 loader_obj = GetDataFromAPI()
 
 
+st.set_page_config(layout='wide', page_title='SiesmoStream')
+
 st.header('SiesmoStream')
 st.markdown('*SeismoStream: Because earthquakes aren\'t just for the birds.*')
 st.markdown('---')
@@ -33,6 +35,9 @@ if option == 'QuakeView':
     city_date_option = st.sidebar.selectbox('Visualize On', ['Date', 'City/State'])
     if city_date_option == 'Date':
         date_option = st.sidebar.selectbox('Choose Dates', ['Today', 'This Week', 'This Month', 'This Year', 'Custom Date Range'])
+
+
+        # String format used to put today's date and a date from week ago as params to the API
         if date_option == 'This Week':
             response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(week_ago, today))
             loader_obj.load_clean_data(response)
