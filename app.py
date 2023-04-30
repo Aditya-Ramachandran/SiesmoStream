@@ -23,6 +23,9 @@ st.markdown('---')
 today = dt.date.today()
 week_ago = today - dt.timedelta(days=7)
 yesterday = today - dt.timedelta(days=1)
+first_day_month = today.replace(day=1)
+
+
 
 st.sidebar.header('SiesmoStream')
 option = st.sidebar.radio('Select', ['QuakeView', 'QuakeEdu', 'About'])
@@ -45,6 +48,11 @@ if option == 'QuakeView':
         # String format used to put today's date and a date from week ago as params to the API
         if date_option == 'This Week':
             response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(week_ago, today))
+            loader_obj.load_clean_data(response)
+        
+
+        if date_option == 'This Month':
+            response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(first_day_month, today))
             loader_obj.load_clean_data(response)
 
 

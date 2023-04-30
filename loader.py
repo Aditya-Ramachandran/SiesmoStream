@@ -34,4 +34,4 @@ class GetDataFromAPI:
         final = pd.concat([json_normalized_properties, json_normalized_geometry], axis=1)
         final['city/state'] = final['place'].str.split(',').str.get(1)
         final['place'] = final['place'].str.split(',').str.get(0)
-        return st.dataframe(final)
+        return st.dataframe(final, use_container_width=True)
