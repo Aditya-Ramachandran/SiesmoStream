@@ -44,21 +44,29 @@ if option == 'QuakeView':
         date_option = st.sidebar.selectbox('Choose Dates', ['Today', 'This Week', 'This Month', 'This Year', 'Custom Date Range'])
 
         if date_option == 'Today':
-            response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(yesterday, today))
-            loader_obj.load_clean_data(response)
+            btn = st.sidebar.button('Visualize')
+            if btn == True:
+                response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(yesterday, today))
+                loader_obj.load_clean_data(response)
 
         # String format used to put today's date and a date from week ago as params to the API
         if date_option == 'This Week':
-            response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(week_ago, today))
-            loader_obj.load_clean_data(response)
+            btn = st.sidebar.button('Visualize')
+            if btn == True:
+                response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(week_ago, today))
+                loader_obj.load_clean_data(response)
         
         if date_option == 'This Month':
-            response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(first_day_month, today))
-            loader_obj.load_clean_data(response)
+            btn = st.sidebar.button('Visualize')
+            if btn == True:
+                response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(first_day_month, today))
+                loader_obj.load_clean_data(response)
 
         if date_option == 'This Year':
-            response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(year, today))
-            loader_obj.load_clean_data(response)
+            btn = st.sidebar.button('Visualize')
+            if btn == True:
+                response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(year, today))
+                loader_obj.load_clean_data(response)
 
         if date_option == 'Custom Date Range':
             btn = st.sidebar.button('Visualize')
