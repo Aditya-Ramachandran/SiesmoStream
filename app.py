@@ -49,21 +49,24 @@ if option == 'QuakeView':
             btn = st.sidebar.button('Visualize')
             if btn == True:
                 response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(yesterday, today))
-                loader_obj.load_clean_data(response)
+                final = loader_obj.load_clean_data(response)
+                st.dataframe(final, use_container_width=True)
 
         # String format used to put today's date and a date from week ago as params to the API
         if date_option == 'This Week':
             btn = st.sidebar.button('Visualize')
             if btn == True:
                 response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(week_ago, today))
-                loader_obj.load_clean_data(response)
+                final = loader_obj.load_clean_data(response)
+                st.dataframe(final, use_container_width=True)
         
         if date_option == 'This Month':
             btn = st.sidebar.button('Visualize')
             if btn == True:
                 try:
                     response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(first_day_month, today))
-                    loader_obj.load_clean_data(response)
+                    final = loader_obj.load_clean_data(response)
+                    st.dataframe(final, use_container_width=True)
                 except:
                     st.warning('Please select the option labeled \'Today\' as it is the first day of the month.')
 
@@ -71,7 +74,8 @@ if option == 'QuakeView':
             btn = st.sidebar.button('Visualize')
             if btn == True:
                 response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(year, today))
-                loader_obj.load_clean_data(response)
+                final = loader_obj.load_clean_data(response)
+                st.dataframe(final, use_container_width=True)
 
         if date_option == 'Custom Date Range':
             btn = st.sidebar.button('Visualize')
@@ -84,16 +88,11 @@ if option == 'QuakeView':
             if btn == True:   
                 try: 
                     response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(start_date, end_date))
-                    loader_obj.load_clean_data(response)
+                    final = loader_obj.load_clean_data(response)
+                    st.dataframe(final, use_container_width=True)
                 except:
                     st.error('Data for the selected date range isn\'t available.')
         
-
-
-
-
-
-    
 
 
 

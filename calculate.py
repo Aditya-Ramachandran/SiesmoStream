@@ -7,6 +7,7 @@ import datetime
 import streamlit as st
 from datetime import date
 
+
 class Calculate:
 
     def __init__(self) -> None:
@@ -20,6 +21,7 @@ class Calculate:
         least_prone_place = dataframe['place'].value_counts().tail(1).index[0]
         # print(maximum, most_pront_city, least_prone_city, most_prone_place, least_prone_place)
         # print(dataframe['city/state'].value_counts().head(1).values[0])
+        st.markdown('##### Some cool stats!')
         col1, col2, col3 = st.columns(3)
         with col1:
             st.metric('Maximum on Richter scale:', maximum)
@@ -32,4 +34,5 @@ class Calculate:
             st.metric('Most Prone Place:', most_prone_place)
         with col5:
             st.metric('Least Prone Place:', least_prone_place)
-        
+        st.markdown("<p style='text-align: center;'><i>Scroll down for bar charts</i></p>", unsafe_allow_html=True)
+        st.markdown('---')
