@@ -53,15 +53,20 @@ if option == 'QuakeView':
                 calc_obj.get_statistics(final)
                 st.dataframe(final, use_container_width=True)
 
+
         # String format used to put today's date and a date from week ago as params to the API
         if date_option == 'This Week':
-            btn = st.sidebar.button('Visualize')
-            if btn == True:
+            btn = st.sidebar.button('Visualize', key='button')
+            if st.session_state['button'] == btn:
                 response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(week_ago, today))
                 final = loader_obj.load_clean_data(response)
                 calc_obj.get_statistics(final)
-                st.dataframe(final, use_container_width=True)
+                mag_slider = st.slider('Filer by magnitude', min_value= final['mag'].min(), max_value=final['mag'].max())
+                final = final[final['mag'] > mag_slider]
+                st.dataframe(final)
+                # st.dataframe(final, use_container_width=True)
         
+
         if date_option == 'This Month':
             btn = st.sidebar.button('Visualize')
             if btn == True:
@@ -73,6 +78,7 @@ if option == 'QuakeView':
                 except:
                     st.warning('Please select the option labeled \'Today\' as it is the first day of the month.')
 
+
         if date_option == 'This Year':
             btn = st.sidebar.button('Visualize')
             if btn == True:
@@ -80,6 +86,7 @@ if option == 'QuakeView':
                 final = loader_obj.load_clean_data(response)
                 calc_obj.get_statistics(final)
                 st.dataframe(final, use_container_width=True)
+
 
         if date_option == 'Custom Date Range':
             btn = st.sidebar.button('Visualize')
