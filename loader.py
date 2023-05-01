@@ -39,7 +39,7 @@ class GetDataFromAPI:
         final['city/state'] = final['place'].str.split(',').str.get(1)
         final['place'] = final['place'].str.split(',').str.get(0)
         final.rename(columns={'Latitude':'Longitude', 'Longitude':'Latitude'}, inplace=True)
-        calc_obj.get_statistics(final)
+        # calc_obj.get_statistics(final)
         # return st.dataframe(final, use_container_width=True)
         return final
         

@@ -10,8 +10,8 @@ from datetime import date
 
 from loader import GetDataFromAPI
 loader_obj = GetDataFromAPI()
-
-
+from calculate import Calculate
+calc_obj =  Calculate()
 
 
 st.set_page_config(layout='wide', page_title='SiesmoStream')
@@ -50,6 +50,7 @@ if option == 'QuakeView':
             if btn == True:
                 response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(yesterday, today))
                 final = loader_obj.load_clean_data(response)
+                calc_obj.get_statistics(final)
                 st.dataframe(final, use_container_width=True)
 
         # String format used to put today's date and a date from week ago as params to the API
@@ -58,6 +59,7 @@ if option == 'QuakeView':
             if btn == True:
                 response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(week_ago, today))
                 final = loader_obj.load_clean_data(response)
+                calc_obj.get_statistics(final)
                 st.dataframe(final, use_container_width=True)
         
         if date_option == 'This Month':
@@ -66,6 +68,7 @@ if option == 'QuakeView':
                 try:
                     response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(first_day_month, today))
                     final = loader_obj.load_clean_data(response)
+                    calc_obj.get_statistics(final)
                     st.dataframe(final, use_container_width=True)
                 except:
                     st.warning('Please select the option labeled \'Today\' as it is the first day of the month.')
@@ -75,6 +78,7 @@ if option == 'QuakeView':
             if btn == True:
                 response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(year, today))
                 final = loader_obj.load_clean_data(response)
+                calc_obj.get_statistics(final)
                 st.dataframe(final, use_container_width=True)
 
         if date_option == 'Custom Date Range':
@@ -89,6 +93,7 @@ if option == 'QuakeView':
                 try: 
                     response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(start_date, end_date))
                     final = loader_obj.load_clean_data(response)
+                    calc_obj.get_statistics(final)
                     st.dataframe(final, use_container_width=True)
                 except:
                     st.error('Data for the selected date range isn\'t available.')
