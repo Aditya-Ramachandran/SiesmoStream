@@ -15,7 +15,6 @@ calc_obj =  Calculate()
 
 
 
-
 st.set_page_config(layout='wide', page_title='SiesmoStream')
 
 st.header('SiesmoStream')
@@ -48,72 +47,72 @@ if option == 'QuakeView':
         date_option = st.sidebar.selectbox('Choose Dates', ['Today', 'This Week', 'This Month', 'This Year', 'Custom Date Range'])
 
         if date_option == 'Today':
-            btn = st.sidebar.button('Visualize')
-            if btn == True:
-                response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(yesterday, today))
-                final = loader_obj.load_clean_data(response)
-                calc_obj.get_statistics(final)
-                st.dataframe(final)
-                st.dataframe(final, use_container_width=True)
+            # btn = st.sidebar.button('Visualize')
+            # if btn == True:
+            response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(yesterday, today))
+            final = loader_obj.load_clean_data(response)
+            calc_obj.get_statistics(final)
+            st.dataframe(final, use_container_width=True)
 
 
         # String format used to put today's date and a date from week ago as params to the API
         if date_option == 'This Week':
-            btn = st.sidebar.button('Visualize', key='button')
-            if st.session_state['button'] == btn:
-                response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(week_ago, today))
-                final = loader_obj.load_clean_data(response)
-                calc_obj.get_statistics(final)
-                mag_slider = st.slider('Filer by magnitude', min_value= final['mag'].min(), max_value=final['mag'].max())
-                final = final[final['mag'] > mag_slider]
-                st.dataframe(final)
-                # st.dataframe(final, use_container_width=True)
+
+            # btn = st.sidebar.button('Visualize', key='button')
+            # if st.session_state['button'] == btn:
+            response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(week_ago, today))
+            final = loader_obj.load_clean_data(response)
+            calc_obj.get_statistics(final)
+            mag_slider = st.slider('Filer by magnitude', min_value= final['mag'].min(), max_value=final['mag'].max())
+            final = final[final['mag'] > mag_slider]
+            st.dataframe(final, use_container_width=True)
+            # st.dataframe(final, use_container_width=True)
         
 
         if date_option == 'This Month':
-            btn = st.sidebar.button('Visualize', key='button')
-            if st.session_state['button'] == btn:
-                try:
-                    response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(first_day_month, today))
-                    final = loader_obj.load_clean_data(response)
-                    calc_obj.get_statistics(final)
-                    mag_slider = st.slider('Filer by magnitude', min_value= final['mag'].min(), max_value=final['mag'].max())
-                    final = final[final['mag'] > mag_slider]
-                    st.dataframe(final, use_container_width=True)
-                except:
-                    st.warning('Please select the option labeled \'Today\' as it is the first day of the month.')
-
-
-        if date_option == 'This Year':
-            btn = st.sidebar.button('Visualize', key='button')
-            if st.session_state['button'] == btn:
-                response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(year, today))
+            # btn = st.sidebar.button('Visualize', key='button')
+            # if st.session_state['button'] == btn:
+            try:
+                response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(first_day_month, today))
                 final = loader_obj.load_clean_data(response)
                 calc_obj.get_statistics(final)
                 mag_slider = st.slider('Filer by magnitude', min_value= final['mag'].min(), max_value=final['mag'].max())
                 final = final[final['mag'] > mag_slider]
                 st.dataframe(final, use_container_width=True)
+            except:
+                st.warning('Please select the option labeled \'Today\' as it is the first day of the month.')
+
+
+        if date_option == 'This Year':
+            # btn = st.sidebar.button('Visualize', key='button')
+            # if st.session_state['button'] == btn:
+            response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(year, today))
+            final = loader_obj.load_clean_data(response)
+            calc_obj.get_statistics(final)
+            mag_slider = st.slider('Filer by magnitude', min_value= final['mag'].min(), max_value=final['mag'].max())
+            final = final[final['mag'] > mag_slider]
+            st.dataframe(final, use_container_width=True)
 
 
         if date_option == 'Custom Date Range':
-            btn = st.sidebar.button('Visualize', key='button')
+        #     btn = st.sidebar.button('Visualize', key='button')
             st.sidebar.markdown("<p style='color: orange;'>Note: If you select a wide range of dates that span several years, the data may not be displayed.</p>", unsafe_allow_html=True)
             start_date = st.date_input('Choose Start Date', max_value=today)
             end_date = st.date_input('Choose End Date', min_value=start_date, max_value=today)
             if end_date <= start_date:
                 st.warning('Please choose an end date after the start date.')
 
-            if st.session_state['button'] == btn:   
-                try: 
-                    response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(start_date, end_date))
-                    final = loader_obj.load_clean_data(response)
-                    calc_obj.get_statistics(final)
-                    mag_slider = st.slider('Filer by magnitude', min_value= final['mag'].min(), max_value=final['mag'].max())
-                    final = final[final['mag'] > mag_slider]
-                    st.dataframe(final, use_container_width=True)
-                except:
-                    st.error('Data for the selected date range isn\'t available.')
-        
+            # if st.session_state['button'] == btn:   
+            try: 
+                response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(start_date, end_date))
+                final = loader_obj.load_clean_data(response)
+                calc_obj.get_statistics(final)
+                mag_slider = st.slider('Filer by magnitude', min_value= final['mag'].min(), max_value=final['mag'].max())
+                final = final[final['mag'] > mag_slider]
+                st.dataframe(final, use_container_width=True)
+            except:
+                st.error('Data for the selected date range isn\'t available.')
+    
 
 
 
