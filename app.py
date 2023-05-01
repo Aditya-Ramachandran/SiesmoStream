@@ -12,6 +12,8 @@ from loader import GetDataFromAPI
 loader_obj = GetDataFromAPI()
 
 
+
+
 st.set_page_config(layout='wide', page_title='SiesmoStream')
 
 st.header('SiesmoStream')
@@ -59,8 +61,11 @@ if option == 'QuakeView':
         if date_option == 'This Month':
             btn = st.sidebar.button('Visualize')
             if btn == True:
-                response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(first_day_month, today))
-                loader_obj.load_clean_data(response)
+                try:
+                    response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(first_day_month, today))
+                    loader_obj.load_clean_data(response)
+                except:
+                    st.warning('Please select the option labeled \'Today\' as it is the first day of the month.')
 
         if date_option == 'This Year':
             btn = st.sidebar.button('Visualize')
