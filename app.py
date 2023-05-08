@@ -63,6 +63,8 @@ if option == 'QuakeView':
                 plotter_obj.plot_iteractive_map(final, map_option)
             if map_option == 'Dark':
                 plotter_obj.plot_iteractive_map(final, map_option)
+            
+            plotter_obj.plot_histogram(final)
 
 
 
@@ -86,7 +88,7 @@ if option == 'QuakeView':
                 plotter_obj.plot_iteractive_map(final, map_option)
             if map_option == 'Dark':
                 plotter_obj.plot_iteractive_map(final, map_option)
-
+            plotter_obj.plot_histogram(final)
         
 
         if date_option == 'This Month':
@@ -109,7 +111,7 @@ if option == 'QuakeView':
                 plotter_obj.plot_iteractive_map(final, map_option)
             if map_option == 'Dark':
                 plotter_obj.plot_iteractive_map(final, map_option)
-
+            plotter_obj.plot_histogram(final)
 
         if date_option == 'This Year':
             # btn = st.sidebar.button('Visualize', key='button')
@@ -128,7 +130,7 @@ if option == 'QuakeView':
                 plotter_obj.plot_iteractive_map(final, map_option)
             if map_option == 'Dark':
                 plotter_obj.plot_iteractive_map(final, map_option)
-
+            plotter_obj.plot_histogram(final)
 
 
         if date_option == 'Custom Date Range':
@@ -155,7 +157,7 @@ if option == 'QuakeView':
                     plotter_obj.plot_iteractive_map(final, map_option)
                 if map_option == 'Dark':
                     plotter_obj.plot_iteractive_map(final, map_option)
-
+                plotter_obj.plot_histogram(final)
             except:
                 st.error('Data for the selected date range isn\'t available.')
             

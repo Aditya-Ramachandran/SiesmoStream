@@ -18,3 +18,11 @@ class Plot:
                         mapbox_style= mapbox_style,height=700 ,color_continuous_scale=px.colors.sequential.Plasma,
                         hover_name='place')
         st.plotly_chart(fig, use_container_width=True)
+    
+
+    def plot_histogram(self, dataframe):
+        st.markdown('---')
+        st.subheader('Histogram')
+        # fig = px.bar(dataframe, x='city/state', y='mag', hover_name='city/state')
+        fig = px.histogram(dataframe, x='city/state',color='mag')
+        st.plotly_chart(fig, use_container_width=True)
