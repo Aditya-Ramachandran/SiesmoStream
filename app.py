@@ -12,6 +12,8 @@ from loader import GetDataFromAPI
 loader_obj = GetDataFromAPI()
 from calculate import Calculate
 calc_obj =  Calculate()
+from plotter import Plot
+plotter_obj = Plot()
 
 
 
@@ -53,6 +55,7 @@ if option == 'QuakeView':
             final = loader_obj.load_clean_data(response)
             calc_obj.get_statistics(final)
             st.dataframe(final, use_container_width=True)
+            plotter_obj.plot_iteractive_map(final)
 
 
         # String format used to put today's date and a date from week ago as params to the API

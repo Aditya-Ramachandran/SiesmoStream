@@ -2,8 +2,8 @@ import pandas as pd
 from pandas import json_normalize
 
 
-from calculate import Calculate
-calc_obj =  Calculate()
+# from calculate import Calculate
+# calc_obj =  Calculate()
 
 
 class GetDataFromAPI:
