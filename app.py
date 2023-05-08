@@ -96,7 +96,7 @@ if option == 'QuakeView':
             mag_slider = st.slider('Filer by magnitude', min_value= final['mag'].min(), max_value=final['mag'].max())
             final = final[final['mag'] > mag_slider]
             st.dataframe(final, use_container_width=True)
-
+            plotter_obj.plot_iteractive_map(final)
 
         if date_option == 'Custom Date Range':
         #     btn = st.sidebar.button('Visualize', key='button')
