@@ -85,7 +85,7 @@ if option == 'QuakeView':
                 st.dataframe(final, use_container_width=True)
             except:
                 st.warning('Please select the option labeled \'Today\' as it is the first day of the month.')
-
+            plotter_obj.plot_iteractive_map(final)
 
         if date_option == 'This Year':
             # btn = st.sidebar.button('Visualize', key='button')
