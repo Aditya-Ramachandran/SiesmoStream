@@ -55,7 +55,14 @@ if option == 'QuakeView':
             final = loader_obj.load_clean_data(response)
             calc_obj.get_statistics(final)
             st.dataframe(final, use_container_width=True)
-            plotter_obj.plot_iteractive_map(final)
+            map_option = st.selectbox('Choose Map Style', ['Terrain', 'Light', 'Dark'])
+            if map_option == 'Terrain':
+                plotter_obj.plot_iteractive_map(final, map_option)
+            if map_option == 'Light':
+                plotter_obj.plot_iteractive_map(final, map_option)
+            if map_option == 'Dark':
+                plotter_obj.plot_iteractive_map(final, map_option)
+
 
 
         # String format used to put today's date and a date from week ago as params to the API
