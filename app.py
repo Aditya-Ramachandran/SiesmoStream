@@ -55,6 +55,7 @@ if option == 'QuakeView':
             final = loader_obj.load_clean_data(response)
             calc_obj.get_statistics(final)
             st.dataframe(final, use_container_width=True)
+            st.subheader('Interactive Map')
             map_option = st.selectbox('Choose Map Style', ['Terrain', 'Light', 'Dark'])
             if map_option == 'Terrain':
                 plotter_obj.plot_iteractive_map(final, map_option)
@@ -77,7 +78,15 @@ if option == 'QuakeView':
             final = final[final['mag'] > mag_slider]
             st.dataframe(final, use_container_width=True)
             # st.dataframe(final, use_container_width=True)
-            plotter_obj.plot_iteractive_map(final)
+            st.subheader('Interactive Map')
+            map_option = st.selectbox('Choose Map Style', ['Terrain', 'Light', 'Dark'])
+            if map_option == 'Terrain':
+                plotter_obj.plot_iteractive_map(final, map_option)
+            if map_option == 'Light':
+                plotter_obj.plot_iteractive_map(final, map_option)
+            if map_option == 'Dark':
+                plotter_obj.plot_iteractive_map(final, map_option)
+
         
 
         if date_option == 'This Month':
@@ -92,7 +101,15 @@ if option == 'QuakeView':
                 st.dataframe(final, use_container_width=True)
             except:
                 st.warning('Please select the option labeled \'Today\' as it is the first day of the month.')
-            plotter_obj.plot_iteractive_map(final)
+            st.subheader('Interactive Map')
+            map_option = st.selectbox('Choose Map Style', ['Terrain', 'Light', 'Dark'])
+            if map_option == 'Terrain':
+                plotter_obj.plot_iteractive_map(final, map_option)
+            if map_option == 'Light':
+                plotter_obj.plot_iteractive_map(final, map_option)
+            if map_option == 'Dark':
+                plotter_obj.plot_iteractive_map(final, map_option)
+
 
         if date_option == 'This Year':
             # btn = st.sidebar.button('Visualize', key='button')
@@ -103,7 +120,16 @@ if option == 'QuakeView':
             mag_slider = st.slider('Filer by magnitude', min_value= final['mag'].min(), max_value=final['mag'].max())
             final = final[final['mag'] > mag_slider]
             st.dataframe(final, use_container_width=True)
-            plotter_obj.plot_iteractive_map(final)
+            st.subheader('Interactive Map')
+            map_option = st.selectbox('Choose Map Style', ['Terrain', 'Light', 'Dark'])
+            if map_option == 'Terrain':
+                plotter_obj.plot_iteractive_map(final, map_option)
+            if map_option == 'Light':
+                plotter_obj.plot_iteractive_map(final, map_option)
+            if map_option == 'Dark':
+                plotter_obj.plot_iteractive_map(final, map_option)
+
+
 
         if date_option == 'Custom Date Range':
         #     btn = st.sidebar.button('Visualize', key='button')
@@ -121,7 +147,15 @@ if option == 'QuakeView':
                 mag_slider = st.slider('Filer by magnitude', min_value= final['mag'].min(), max_value=final['mag'].max())
                 final = final[final['mag'] > mag_slider]
                 st.dataframe(final, use_container_width=True)
-                plotter_obj.plot_iteractive_map(final)
+                st.subheader('Interactive Map')
+                map_option = st.selectbox('Choose Map Style', ['Terrain', 'Light', 'Dark'])
+                if map_option == 'Terrain':
+                    plotter_obj.plot_iteractive_map(final, map_option)
+                if map_option == 'Light':
+                    plotter_obj.plot_iteractive_map(final, map_option)
+                if map_option == 'Dark':
+                    plotter_obj.plot_iteractive_map(final, map_option)
+
             except:
                 st.error('Data for the selected date range isn\'t available.')
             
