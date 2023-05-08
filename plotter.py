@@ -20,9 +20,12 @@ class Plot:
         st.plotly_chart(fig, use_container_width=True)
     
 
-    def plot_histogram(self, dataframe):
-        st.markdown('---')
+    def plot_histogram(self, dataframe, option):
         st.subheader('Histogram')
         # fig = px.bar(dataframe, x='city/state', y='mag', hover_name='city/state')
-        fig = px.histogram(dataframe, x='city/state',color='mag')
-        st.plotly_chart(fig, use_container_width=True)
+        if option == 'Normal':
+            fig = px.histogram(dataframe, x='city/state')
+            st.plotly_chart(fig, use_container_width=True)
+        if option == 'Stacked':
+            fig = px.histogram(dataframe, x='city/state',color='mag')
+            st.plotly_chart(fig, use_container_width=True)

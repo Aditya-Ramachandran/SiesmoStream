@@ -63,9 +63,12 @@ if option == 'QuakeView':
                 plotter_obj.plot_iteractive_map(final, map_option)
             if map_option == 'Dark':
                 plotter_obj.plot_iteractive_map(final, map_option)
-            
-            plotter_obj.plot_histogram(final)
-
+            st.markdown('---')
+            histogram_option = st.selectbox('Choose Histogram Style', ['Normal', 'Stacked'])
+            if histogram_option == 'Normal':
+                plotter_obj.plot_histogram(final, histogram_option)
+            if histogram_option == 'Stacked':
+                st.warning('Too little data to display a stacked histogram')
 
 
         # String format used to put today's date and a date from week ago as params to the API
@@ -88,7 +91,12 @@ if option == 'QuakeView':
                 plotter_obj.plot_iteractive_map(final, map_option)
             if map_option == 'Dark':
                 plotter_obj.plot_iteractive_map(final, map_option)
-            plotter_obj.plot_histogram(final)
+            st.markdown('---')
+            histogram_option = st.selectbox('Choose Histogram Style', ['Normal', 'Stacked'])
+            if histogram_option == 'Normal':
+                plotter_obj.plot_histogram(final, histogram_option)
+            if histogram_option == 'Stacked':
+                plotter_obj.plot_histogram(final, histogram_option)
         
 
         if date_option == 'This Month':
@@ -111,7 +119,13 @@ if option == 'QuakeView':
                 plotter_obj.plot_iteractive_map(final, map_option)
             if map_option == 'Dark':
                 plotter_obj.plot_iteractive_map(final, map_option)
-            plotter_obj.plot_histogram(final)
+            st.markdown('---')
+            histogram_option = st.selectbox('Choose Histogram Style', ['Normal', 'Stacked'])
+            if histogram_option == 'Normal':
+                plotter_obj.plot_histogram(final, histogram_option)
+            if histogram_option == 'Stacked':
+                plotter_obj.plot_histogram(final, histogram_option)
+
 
         if date_option == 'This Year':
             # btn = st.sidebar.button('Visualize', key='button')
@@ -130,7 +144,12 @@ if option == 'QuakeView':
                 plotter_obj.plot_iteractive_map(final, map_option)
             if map_option == 'Dark':
                 plotter_obj.plot_iteractive_map(final, map_option)
-            plotter_obj.plot_histogram(final)
+            st.markdown('---')
+            histogram_option = st.selectbox('Choose Histogram Style', ['Normal', 'Stacked'])
+            if histogram_option == 'Normal':
+                plotter_obj.plot_histogram(final, histogram_option)
+            if histogram_option == 'Stacked':
+                plotter_obj.plot_histogram(final, histogram_option)
 
 
         if date_option == 'Custom Date Range':
@@ -157,7 +176,12 @@ if option == 'QuakeView':
                     plotter_obj.plot_iteractive_map(final, map_option)
                 if map_option == 'Dark':
                     plotter_obj.plot_iteractive_map(final, map_option)
-                plotter_obj.plot_histogram(final)
+                st.markdown('---')
+                histogram_option = st.selectbox('Choose Histogram Style', ['Normal', 'Stacked'])
+                if histogram_option == 'Normal':
+                    plotter_obj.plot_histogram(final, histogram_option)
+                if histogram_option == 'Stacked':
+                    plotter_obj.plot_histogram(final, histogram_option)
             except:
                 st.error('Data for the selected date range isn\'t available.')
             
