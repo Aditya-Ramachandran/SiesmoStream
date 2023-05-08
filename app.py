@@ -70,6 +70,7 @@ if option == 'QuakeView':
             final = final[final['mag'] > mag_slider]
             st.dataframe(final, use_container_width=True)
             # st.dataframe(final, use_container_width=True)
+            plotter_obj.plot_iteractive_map(final)
         
 
         if date_option == 'This Month':
