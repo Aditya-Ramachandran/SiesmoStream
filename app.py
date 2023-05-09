@@ -68,7 +68,7 @@ if option == 'QuakeView':
             if histogram_option == 'Normal':
                 plotter_obj.plot_histogram(final, histogram_option)
             if histogram_option == 'Stacked':
-                st.warning('Too little data to display a stacked histogram')
+                plotter_obj.plot_histogram(final, histogram_option)
 
 
         # String format used to put today's date and a date from week ago as params to the API

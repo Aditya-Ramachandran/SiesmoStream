@@ -27,5 +27,8 @@ class Plot:
             fig = px.histogram(dataframe, x='city/state')
             st.plotly_chart(fig, use_container_width=True)
         if option == 'Stacked':
-            fig = px.histogram(dataframe, x='city/state',color='mag')
-            st.plotly_chart(fig, use_container_width=True)
+            if dataframe['place'].value_counts().head(1).values[0] > 1:
+                fig = px.histogram(dataframe, x='city/state',color='mag')
+                st.plotly_chart(fig, use_container_width=True)
+            else:
+                st.warning('Too little data for a stacked histogram')
