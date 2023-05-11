@@ -35,6 +35,8 @@ class Plot:
         st.markdown('---')
 
         st.subheader('Year on Year statistics')
-        btn = st.button('See Year on Year stas')
+        st.write('Discover the fascinating Year on Year statistics with stunning visuals and mesmerizing animations that will leave you captivated. Dive into the data and unravel insights that will surprise you.')
+        st.write('*Please note that due to the size of the data, some graphs may take a few seconds to load, but trust me, it\'s worth the wait!*')
+        btn = st.button('See Year on Year stas')  
         if btn:
             st.write('hello')
