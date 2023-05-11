@@ -1,6 +1,9 @@
 import streamlit as st
 import plotly.express as px
 
+from YearOnYear import YearOnYear
+yoy_obj = YearOnYear()
+
 class Plot:
 
     def __init__(self) -> None:
@@ -39,4 +42,4 @@ class Plot:
         st.write('*Please note that due to the size of the data, some graphs may take a few seconds to load, but trust me, it\'s worth the wait!*')
         btn = st.button('See Year on Year stas')  
         if btn:
-            st.write('hello')
+            yoy_obj.plot_yoy_bar(dataframe)
