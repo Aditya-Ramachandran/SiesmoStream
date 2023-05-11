@@ -190,7 +190,8 @@ if option == 'QuakeView':
     if city_date_option == 'City/State':
         response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1-1-2015&endtime={}&minmagnitude=5'.format(today))
         final = loader_obj.load_clean_data(response)
-        st.sidebar.selectbox('Choose the City/Country', sorted(list(final['city/state'].dropna().unique())))
+        chosen_country = st.sidebar.selectbox('Choose the City/Country', sorted(list(final['city/state'].dropna().unique())))
+        
             
 
 

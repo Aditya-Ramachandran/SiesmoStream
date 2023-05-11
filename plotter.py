@@ -32,3 +32,9 @@ class Plot:
                 st.plotly_chart(fig, use_container_width=True)
             else:
                 st.warning('Too little data for a stacked histogram')
+        st.markdown('---')
+
+        st.subheader('Year on Year statistics')
+        btn = st.button('See Year on Year stas')
+        if btn:
+            st.write('hello')
