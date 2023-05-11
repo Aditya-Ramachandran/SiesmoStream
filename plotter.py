@@ -56,3 +56,5 @@ class Plot:
             yoy_obj.plot_yoy_bar(final1)
             
             yoy_obj.plot_yoy_line(final1)
+
+            yoy_obj.plot_yoy_animated_graph(final1)
