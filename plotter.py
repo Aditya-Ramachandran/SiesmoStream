@@ -1,8 +1,14 @@
 import streamlit as st
 import plotly.express as px
+import datetime as dt
+import requests
 
 from YearOnYear import YearOnYear
 yoy_obj = YearOnYear()
+from loader import GetDataFromAPI
+loader_obj = GetDataFromAPI()
+
+today = dt.date.today()
 
 class Plot:
 
@@ -40,6 +46,13 @@ class Plot:
         st.subheader('Year on Year statistics')
         st.write('Discover the fascinating Year on Year statistics with stunning visuals and mesmerizing animations that will leave you captivated. Dive into the data and unravel insights that will surprise you.')
         st.write('*Please note that due to the size of the data, some graphs may take a few seconds to load, but trust me, it\'s worth the wait!*')
-        btn = st.button('See Year on Year stas')  
+        btn = st.button('See Year on Year stats')  
+        # col1, col2 = st.colums(2)
         if btn:
-            yoy_obj.plot_yoy_bar(dataframe)
+            response1 = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2014-3-3&endtime=2023-1-1&minmagnitude=5')
+            final1 = loader_obj.load_clean_data(response1)
+            col1, col2 = st.columns(2)
+            
+            yoy_obj.plot_yoy_bar(final1)
+            
+            yoy_obj.plot_yoy_line(final1)
