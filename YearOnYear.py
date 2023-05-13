@@ -33,3 +33,10 @@ class YearOnYear:
                         center=dict(lat=0, lon=180), zoom=0.5,
                         mapbox_style= 'stamen-terrain',height=700 ,color_continuous_scale=px.colors.sequential.Plasma, animation_frame='Year', title='Animated Graph')
         st.plotly_chart(fig,use_container_width=True)
+    
+    def plot_pie_total(self, dataframe):
+        temp_df = dataframe.groupby('Year')['mag'].count().reset_index()
+        temp_df.rename(columns={'mag':'Count'}, inplace=True)
+        fig = px.pie(temp_df, values='Count', names='Year', title='Count of Earthquakes in the Last 10 Years - Pie Chart', labels='Year')
+        st.plotly_chart(fig)
+    
