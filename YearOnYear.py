@@ -40,3 +40,11 @@ class YearOnYear:
         fig = px.pie(temp_df, values='Count', names='Year', title='Count of Earthquakes in the Last 10 Years - Pie Chart', labels='Year')
         st.plotly_chart(fig)
     
+
+    def plot_country_bar_chart(self, dataframe, choice):
+        temp_df = dataframe[dataframe['city/state'] == choice].groupby('Year')['mag'].count().reset_index()
+        temp_df.rename(columns={'mag':'Count'}, inplace=True)
+        fig = px.bar(temp_df, x='Year', y='Count', color='Count')
+        fig.update_layout(xaxis=dict(dtick='1 year'), xaxis_title='Year', yaxis_title='Count', title='Earthquakes in {} by Year - Bar Chart'.format(choice))
+        st.plotly_chart(fig, use_container_width=True)
+    

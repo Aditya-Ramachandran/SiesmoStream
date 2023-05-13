@@ -97,3 +97,5 @@ class Plot:
         fig.update_traces(marker=dict(size=15))
         st.plotly_chart(fig, use_container_width=True)
         st.markdown('---')
+
+        yoy_obj.plot_country_bar_chart(dataframe, choice)
