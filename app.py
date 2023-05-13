@@ -36,8 +36,7 @@ year = date(date.today().year, 1, 1)
 
 
 st.sidebar.header('SiesmoStream')
-option = st.sidebar.radio('Select', ['QuakeView', 'QuakeEdu', 'About'])
-
+option = st.sidebar.radio('Select', ['About','QuakeView', 'QuakeEdu'])
 # choosing what to do based on selected radio buttons
 if option == 'QuakeView':
     st.sidebar.markdown('*Earthquake visualization on an interactive map*')
@@ -202,3 +201,5 @@ if option == 'QuakeEdu':
 
 if option == 'About':
     st.sidebar.markdown('*Learn more about the project*')
+    st.markdown("![Alt Text](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGI0ZWU5ZDcyM2FhOGE3NzVjZmQ2MzIxNzM3NGEyMmNlNmMyYWZjNSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/TdXeFkgX9nHqsZWkX0/giphy.gif)")
+    st.video('Landing_video.gif')
