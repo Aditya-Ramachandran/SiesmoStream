@@ -79,7 +79,7 @@ class Plot:
         GMT_relative = response.json()['features'][0]['properties']['annotations']['timezone']['offset_string']
 
         new_df = pd.DataFrame({'Longitude': [lat], 'Latitude': [lon], 'Currency': [curr_name], 'Smallest Denomination': [smallest_denomination],
-                        'Driving Side': [drive], 'Speed Unit':[speed_in], 'Timezone':timezone, 'Relative to GMT':GMT_relative})
+                        'Driving Side': [drive], 'Speed Unit':[speed_in], 'Timezone':timezone, 'Relative to GMT':GMT_relative, 'Country':choice})
         
         st.subheader('Some stats about {}'.format(choice))
         col1, col2 = st.columns(2)
@@ -93,5 +93,7 @@ class Plot:
             st.metric('Relative to GMT', GMT_relative)
         
         # st.dataframe(new_df, use_container_width=True)
-        fig = px.scatter_geo(new_df, lat='Latitude', lon='Longitude', projection='mollweide', title='{} on World Map'.format(choice))
+        fig = px.scatter_geo(new_df, lat='Latitude', lon='Longitude', projection='mollweide', title='{} on World Map'.format(choice), height=550, hover_name='Country')   
+        fig.update_traces(marker=dict(size=15))
         st.plotly_chart(fig, use_container_width=True)
+        st.markdown('---')
