@@ -201,5 +201,10 @@ if option == 'QuakeEdu':
 
 if option == 'About':
     st.sidebar.markdown('*Learn more about the project*')
+    col1, col2 = st.columns(2)
     st.markdown("![Alt Text](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGI0ZWU5ZDcyM2FhOGE3NzVjZmQ2MzIxNzM3NGEyMmNlNmMyYWZjNSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/TdXeFkgX9nHqsZWkX0/giphy.gif)")
-    st.video('Landing_video.gif')
+    st.subheader('Introduction')
+    st.write('Welcome to my earthquake plotting app! If you\'re anything like me, you\'re probably fascinated by the powerful forces of nature that can shake the ground beneath our feet. That\'s why I created this app - to help you explore and visualize earthquake data in a fun and interactive way!')
+    st.write('With my app, you can easily plot earthquake data on a map and explore patterns and trends over time. Whether you\'re a seasoned geologist or just a curious beginner, this app is perfect for anyone who wants to learn more about earthquakes and their impact on the world.')
+    st.write('So go ahead and give it a try! You might just discover something new and exciting about this amazing planet we call home.')
+    st.markdown('---')
