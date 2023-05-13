@@ -48,3 +48,9 @@ class YearOnYear:
         fig.update_layout(xaxis=dict(dtick='1 year'), xaxis_title='Year', yaxis_title='Count', title='Earthquakes in {} by Year - Bar Chart'.format(choice))
         st.plotly_chart(fig, use_container_width=True)
     
+    def plot_country_bar_chart_month(self, dataframe, choice):
+        temp_df = dataframe[dataframe['city/state'] == choice].groupby(dataframe['Date'].dt.month_name())['mag'].count().sort_values(ascending=False).reset_index()
+        temp_df.rename(columns={'mag':'Count', 'Date':'Month'}, inplace=True)
+        fig = px.bar(temp_df, x='Month', y='Count', color='Count')
+        fig.update_layout(xaxis_title='Month', yaxis_title='Count', title='Earthquakes in {} by Month - Bar Chart'.format(choice))
+        st.plotly_chart(fig, use_container_width=True)

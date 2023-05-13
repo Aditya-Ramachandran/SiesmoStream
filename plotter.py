@@ -58,7 +58,6 @@ class Plot:
             
             yoy_obj.plot_yoy_line(final1)
 
-
             yoy_obj.plot_yoy_animated_graph(final1)
 
             with col1:
@@ -99,3 +98,5 @@ class Plot:
         st.markdown('---')
 
         yoy_obj.plot_country_bar_chart(dataframe, choice)
+
+        yoy_obj.plot_country_bar_chart_month(dataframe, choice)
