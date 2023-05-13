@@ -54,3 +54,5 @@ class YearOnYear:
         fig = px.bar(temp_df, x='Month', y='Count', color='Count')
         fig.update_layout(xaxis_title='Month', yaxis_title='Count', title='Earthquakes in {} by Month - Bar Chart'.format(choice))
         st.plotly_chart(fig, use_container_width=True)
+    
+    

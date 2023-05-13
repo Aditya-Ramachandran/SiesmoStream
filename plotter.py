@@ -66,8 +66,11 @@ class Plot:
 
     def plot_country(self, dataframe, choice):
         
-        url = 'https://api.opencagedata.com/geocode/v1/geojson?q={}&key=028fc01b3e044c1693027b167e31b1b5&pretty=1'.format(choice)
-        response = requests.get(url)
+        try:
+            url = 'https://api.opencagedata.com/geocode/v1/geojson?q={}&key=028fc01b3e044c1693027b167e31b1b5&pretty=1'.format(choice)
+            response = requests.get(url)
+        except:
+            st.warning('Data could not be loaded')
         lat = response.json()['features'][0]['geometry']['coordinates'][0]
         lon = response.json()['features'][0]['geometry']['coordinates'][1]
         curr_name = response.json()['features'][0]['properties']['annotations']['currency']['name']
