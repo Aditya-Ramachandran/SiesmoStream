@@ -204,8 +204,15 @@ if option == 'About':
     st.sidebar.markdown('*Learn more about the project*')
     st.markdown("![Alt Text](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGI0ZWU5ZDcyM2FhOGE3NzVjZmQ2MzIxNzM3NGEyMmNlNmMyYWZjNSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/TdXeFkgX9nHqsZWkX0/giphy.gif)")
     # st.video('Landing_video.gif')
+
     st.subheader('Introduction')
     st.write('Welcome to my earthquake plotting app! If you\'re anything like me, you\'re probably fascinated by the powerful forces of nature that can shake the ground beneath our feet. That\'s why I created this app - to help you explore and visualize earthquake data in a fun and interactive way!')
     st.write('With my app, you can easily plot earthquake data on a map and explore patterns and trends over time. Whether you\'re a seasoned geologist or just a curious beginner, this app is perfect for anyone who wants to learn more about earthquakes and their impact on the world.')
     st.write('So go ahead and give it a try! You might just discover something new and exciting about this amazing planet we call home.')
     st.markdown('---')
+
+    st.subheader('Unveiling the Spectacular Features!')
+    st.write('Hey there! So, in my app, you\'ll find some really cool visualizations that will help you explore earthquake data like never before!')
+    st.write('- I\'ve created interactive maps that allow you to explore earthquakes by location. You can zoom in or out and click on any point to see the details of the earthquake that occurred at that location.')
+    st.write('- But that\'s not all! I\'ve also created animations that show you how earthquakes have occurred over time. These animations give you a great perspective on how earthquakes have evolved over a specific period.')
+    st.write('- I\'ve also included bar charts and line charts that show you how the frequency and magnitude of earthquakes have changed over time. This can help you identify patterns and trends in the occurrence of earthquakes.')
