@@ -19,9 +19,6 @@ plotter_obj = Plot()
 
 st.set_page_config(layout='wide', page_title='SiesmoStream')
 
-st.header('SiesmoStream')
-st.markdown('*SeismoStream: Because earthquakes aren\'t just for the birds.*')
-st.markdown('---')
 
 # st.slider('hello')
 # hitting the API and storing result in response variable
@@ -42,6 +39,7 @@ option = st.sidebar.radio('Select', ['QuakeView', 'QuakeEdu', 'About'])
 if option == 'QuakeView':
     st.sidebar.markdown('*Earthquake visualization on an interactive map*')
     st.header('QuakeView')
+    st.markdown('---')
     # final = loader_obj.load_clean_data(response)
 
     city_date_option = st.sidebar.selectbox('Visualize On', ['Date', 'City/State'])
@@ -201,6 +199,9 @@ if option == 'QuakeEdu':
 
 
 if option == 'About':
+    st.header('SiesmoStream')
+    st.markdown('*SeismoStream: Because earthquakes aren\'t just for the birds.*')
+    st.markdown('---')
     st.sidebar.markdown('*Learn more about the project*')
     st.markdown("![Alt Text](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGI0ZWU5ZDcyM2FhOGE3NzVjZmQ2MzIxNzM3NGEyMmNlNmMyYWZjNSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/TdXeFkgX9nHqsZWkX0/giphy.gif)")
     # st.video('Landing_video.gif')
