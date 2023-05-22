@@ -33,7 +33,7 @@ year = date(date.today().year, 1, 1)
 
 
 st.sidebar.header('SiesmoStream')
-option = st.sidebar.radio('Select', ['QuakeView', 'QuakeEdu', 'About'])
+option = st.sidebar.radio('Select', ['About','QuakeView', 'QuakeEdu'])
 
 # choosing what to do based on selected radio buttons
 if option == 'QuakeView':
