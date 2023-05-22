@@ -238,3 +238,19 @@ if option == 'About':
     st.subheader('Connect with me:')
     st.markdown('<p align="left"><a href="https://www.linkedin.com/in/aditya-ramachandran-27b2ab24a/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?logo=linkedin&logoColor=white&style=for-the-badge" alt="LinkedIn" /></a></p>', unsafe_allow_html=True)
     st.markdown('<p align="left"><a href="https://github.com/Aditya-Ramachandran" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white&style=for-the-badge" alt="GitHub" /></a></p>', unsafe_allow_html=True)
+    st.markdown('---')
+
+
+
+    # https://stackoverflow.com/questions/70680012/play-muted-loop-video-on-streamlit
+
+    # col1, col2 = st.columns([1, 1])
+
+    # video_html = """
+    #             <video controls width="250" autoplay="true" muted="true" loop="true">
+    #             <source 
+    #             src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" 
+    #             type="video/mp4" />s
+    #             </video>
+    #         """
+    # col2.markdown(video_html, unsafe_allow_html=True)

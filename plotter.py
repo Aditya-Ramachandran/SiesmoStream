@@ -94,9 +94,22 @@ class Plot:
             st.metric('Speed Measured in', speed_in)
             st.metric('Relative to GMT', GMT_relative)
         
+        # st.dataframe(new_df)
+
         # st.dataframe(new_df, use_container_width=True)
-        fig = px.scatter_geo(new_df, lat='Latitude', lon='Longitude', projection='mollweide', title='{} on World Map'.format(choice), height=550, hover_name='Country')   
-        fig.update_traces(marker=dict(size=15))
+        custom_marker_symbol = "star-diamond"
+        fig = px.scatter_geo(new_df, lat='Latitude', lon='Longitude', title='{} on World Map'.format(choice), height=550, hover_name='Country')   
+
+        fig.update_traces(marker=dict(symbol=custom_marker_symbol,size=15))
+        fig.update_layout(geo=dict(showcountries=True))
+
+        # https://stackoverflow.com/questions/62102834/plotly-zoomed-marker-area#:~:text=When%20using%20Scattergeo%20you%20can,map's%20lon%20and%20lat%20ranges. -> SO link for zoom on current country 
+        longitude = float(new_df['Longitude'])
+        latitude = float(new_df['Latitude'])
+        fig.update_geos(
+            visible=True, resolution=50, showcountries=True, countrycolor='gray',projection_type="mollweide", projection_scale=2, center=dict(lat = latitude, lon=longitude),
+            scope="world")
+
         st.plotly_chart(fig, use_container_width=True)
         st.markdown('---')
 
