@@ -216,3 +216,17 @@ if option == 'About':
     st.write('- I\'ve created interactive maps that allow you to explore earthquakes by location. You can zoom in or out and click on any point to see the details of the earthquake that occurred at that location.')
     st.write('- But that\'s not all! I\'ve also created animations that show you how earthquakes have occurred over time. These animations give you a great perspective on how earthquakes have evolved over a specific period.')
     st.write('- I\'ve also included bar charts and line charts that show you how the frequency and magnitude of earthquakes have changed over time. This can help you identify patterns and trends in the occurrence of earthquakes.')
+
+    st.markdown('---')
+    st.subheader('How to use?')
+    st.write('- Choose to visualize on date or on country')
+    st.write('###### For Date')
+    st.write("- You can select from various time ranges such as today, this week, this month, or this year. Alternatively, you can provide a custom date to explore earthquake data.")
+    st.write("- The graph will automatically update once you choose the date or time range.")
+    st.write("- To view the Year On Year Statistics, simply click on the button. This will display visually appealing statistics for the last 10 years.")
+
+    st.write('###### For Country')
+    st.write("- Select a country from the dropdown menu.")
+    st.write("- Once you choose a country, you will see the country statistics along with the plotted historical earthquake data.")
+    st.markdown('---')
+
