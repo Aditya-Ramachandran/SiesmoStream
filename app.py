@@ -230,3 +230,8 @@ if option == 'About':
     st.write("- Once you choose a country, you will see the country statistics along with the plotted historical earthquake data.")
     st.markdown('---')
 
+    st.subheader("Credits:")
+    st.write("- Earthquake data provided by the USGS API (https://earthquake.usgs.gov/fdsnws/event/1/)")
+    st.write("- Geocoding data provided by the OpenCage Data API (https://opencagedata.com/api)")
+    st.markdown('---')
+
