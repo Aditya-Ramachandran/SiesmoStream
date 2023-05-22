@@ -234,4 +234,7 @@ if option == 'About':
     st.write("- Earthquake data provided by the USGS API (https://earthquake.usgs.gov/fdsnws/event/1/)")
     st.write("- Geocoding data provided by the OpenCage Data API (https://opencagedata.com/api)")
     st.markdown('---')
-
+    
+    st.subheader('Connect with me:')
+    st.markdown('<p align="left"><a href="https://www.linkedin.com/in/aditya-ramachandran-27b2ab24a/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?logo=linkedin&logoColor=white&style=for-the-badge" alt="LinkedIn" /></a></p>', unsafe_allow_html=True)
+    st.markdown('<p align="left"><a href="https://github.com/Aditya-Ramachandran" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white&style=for-the-badge" alt="GitHub" /></a></p>', unsafe_allow_html=True)
