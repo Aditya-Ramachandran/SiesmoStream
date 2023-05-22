@@ -79,7 +79,7 @@ if option == 'QuakeView':
             response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(week_ago, today))
             final = loader_obj.load_clean_data(response)
             calc_obj.get_statistics(final)
-            mag_slider = st.slider('Filer by magnitude', min_value= final['mag'].min(), max_value=final['mag'].max())
+            mag_slider = st.slider('Filer by magnitude', min_value= float(final['mag'].min()), max_value=float(final['mag'].max()))
             final = final[final['mag'] > mag_slider]
             st.dataframe(final, use_container_width=True)
             # st.dataframe(final, use_container_width=True)
@@ -247,10 +247,8 @@ if option == 'About':
     # col1, col2 = st.columns([1, 1])
 
     # video_html = """
-    #             <video controls width="250" autoplay="true" muted="true" loop="true">
-    #             <source 
-    #             src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" 
-    #             type="video/mp4" />s
+    #             <video controls width="500" autoplay="true" muted="true" loop="true">
+    #             <source src="https://www.youtube.com/watch?v=qoN3oKO91Ak&list=RDMMJAIVxKw36Rg&index=23" type="video/mp4">
     #             </video>
-    #         """
+    #             """
     # col2.markdown(video_html, unsafe_allow_html=True)

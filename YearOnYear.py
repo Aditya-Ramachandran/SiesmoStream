@@ -55,8 +55,6 @@ class YearOnYear:
         fig.update_layout(xaxis_title='Month', yaxis_title='Count', title='Earthquakes in {} by Month - Bar Chart'.format(choice))
         st.plotly_chart(fig, use_container_width=True)
     
-
-
     def plot_country_pie_chart_overall(self, dataframe, choice):
         temp_df = dataframe[dataframe['city/state'] == choice].groupby('Year')['mag'].count().reset_index()
         temp_df.rename(columns={'mag':'Count'}, inplace=True)
@@ -70,6 +68,14 @@ class YearOnYear:
         st.plotly_chart(fig)
 
         # st.dataframe(temp_df)
+    
+    # def plot_animated_bar(self, dataframe, choice):
+    #     temp_df = dataframe[dataframe['city/state'] == choice].groupby('Year')['mag'].count().reset_index()
+    #     temp_df.rename(columns={'mag':'Count'}, inplace=True)
+    #     fig = px.bar(temp_df, x='Year', y='Count', color='Count', animation_frame='Year')
+    #     st.plotly_chart(fig)
+    #     st.dataframe(temp_df)
+
 
     
     

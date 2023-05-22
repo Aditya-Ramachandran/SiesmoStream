@@ -118,5 +118,7 @@ class Plot:
         yoy_obj.plot_country_bar_chart_month(dataframe, choice)
 
         yoy_obj.plot_country_pie_chart_overall(dataframe, choice)
-        
+
         yoy_obj.plot_country_pie_chart_month(dataframe, choice)
+
+        # yoy_obj.plot_animated_bar(dataframe, choice)
