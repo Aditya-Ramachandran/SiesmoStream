@@ -106,7 +106,7 @@ if option == 'QuakeView':
                 response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(first_day_month, today))
                 final = loader_obj.load_clean_data(response)
                 calc_obj.get_statistics(final)
-                mag_slider = st.slider('Filer by magnitude', min_value= final['mag'].min(), max_value=final['mag'].max())
+                mag_slider = st.slider('Filer by magnitude', min_value= float(final['mag'].min()), max_value= float(final['mag'].max()))
                 final = final[final['mag'] > mag_slider]
                 st.dataframe(final, use_container_width=True)
             except:
@@ -133,7 +133,7 @@ if option == 'QuakeView':
             response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(year, today))
             final = loader_obj.load_clean_data(response)
             calc_obj.get_statistics(final)
-            mag_slider = st.slider('Filer by magnitude', min_value= final['mag'].min(), max_value=final['mag'].max())
+            mag_slider = st.slider('Filer by magnitude', min_value= float(final['mag'].min()), max_value= float(final['mag'].max()))
             final = final[final['mag'] > mag_slider]
             st.dataframe(final, use_container_width=True)
             st.subheader('Interactive Map')
@@ -165,7 +165,7 @@ if option == 'QuakeView':
                 response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(start_date, end_date))
                 final = loader_obj.load_clean_data(response)
                 calc_obj.get_statistics(final)
-                mag_slider = st.slider('Filer by magnitude', min_value= final['mag'].min(), max_value=final['mag'].max())
+                mag_slider = st.slider('Filer by magnitude', min_value= float(final['mag'].min()), max_value= float(final['mag'].max()))
                 final = final[final['mag'] > mag_slider]
                 st.dataframe(final, use_container_width=True)
                 st.subheader('Interactive Map')
