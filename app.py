@@ -54,7 +54,7 @@ if option == 'QuakeView':
             response = requests.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={}&endtime={}&minmagnitude=5'.format(yesterday, today))
             final = loader_obj.load_clean_data(response)
             calc_obj.get_statistics(final)
-            st.dataframe(final, use_container_width=True)
+            # st.dataframe(final, use_container_width=True)
             st.subheader('Interactive Map')
             map_option = st.selectbox('Choose Map Style', ['Terrain', 'Light', 'Dark'])
             if map_option == 'Terrain':
@@ -81,7 +81,7 @@ if option == 'QuakeView':
             calc_obj.get_statistics(final)
             mag_slider = st.slider('Filer by magnitude', min_value= float(final['mag'].min()), max_value=float(final['mag'].max()))
             final = final[final['mag'] > mag_slider]
-            st.dataframe(final, use_container_width=True)
+            # st.dataframe(final, use_container_width=True)
             # st.dataframe(final, use_container_width=True)
             st.subheader('Interactive Map')
             map_option = st.selectbox('Choose Map Style', ['Terrain', 'Light', 'Dark'])
@@ -108,7 +108,7 @@ if option == 'QuakeView':
                 calc_obj.get_statistics(final)
                 mag_slider = st.slider('Filer by magnitude', min_value= float(final['mag'].min()), max_value= float(final['mag'].max()))
                 final = final[final['mag'] > mag_slider]
-                st.dataframe(final, use_container_width=True)
+                # st.dataframe(final, use_container_width=True)
             except:
                 st.warning('Please select the option labeled \'Today\' as it is the first day of the month.')
             st.subheader('Interactive Map')
@@ -135,7 +135,7 @@ if option == 'QuakeView':
             calc_obj.get_statistics(final)
             mag_slider = st.slider('Filer by magnitude', min_value= float(final['mag'].min()), max_value= float(final['mag'].max()))
             final = final[final['mag'] > mag_slider]
-            st.dataframe(final, use_container_width=True)
+            # st.dataframe(final, use_container_width=True)
             st.subheader('Interactive Map')
             map_option = st.selectbox('Choose Map Style', ['Terrain', 'Light', 'Dark'])
             if map_option == 'Terrain':
@@ -167,7 +167,7 @@ if option == 'QuakeView':
                 calc_obj.get_statistics(final)
                 mag_slider = st.slider('Filer by magnitude', min_value= float(final['mag'].min()), max_value= float(final['mag'].max()))
                 final = final[final['mag'] > mag_slider]
-                st.dataframe(final, use_container_width=True)
+                # st.dataframe(final, use_container_width=True)
                 st.subheader('Interactive Map')
                 map_option = st.selectbox('Choose Map Style', ['Terrain', 'Light', 'Dark'])
                 if map_option == 'Terrain':
