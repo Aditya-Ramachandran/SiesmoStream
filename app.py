@@ -268,7 +268,7 @@ if option == 'About':
     with col2:
         for i in range(0, 20):
             st.write(' ')
-        st.markdown("![Alt Text](https://media.giphy.com/media/DfUB71qWDdDuIxk9U3/giphy.gif)")
+        st.markdown("![Alt Text](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGI0ZDVjNzIyNDU0NzJlMWJmMGE2MzU3MDZiZmIwY2U3MjE0N2QwNyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/KuDCWZNEjzLqdlUKk0/giphy.gif)")
     
     # st.video('Landing_video.gif')
 
