@@ -246,6 +246,15 @@ if option == 'QuakeEdu':
     st.write('- **Stay informed:** Follow official sources of information, such as local authorities and emergency management agencies, for updates on earthquake warnings, alerts, and safety instructions.')
     st.write('- **Check for gas and electrical hazards:** After an earthquake, check for gas leaks, electrical damage, and potential hazards like broken wires. If you suspect a gas leak, turn off the main gas valve and immediately leave the area.')
 
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.write(' ')
+    with col2:
+        st.image("Media/Earthquake Safety.jpg", width=200)
+    with col3:
+        st.write(' ')
+
 
 if option == 'About':
     st.header('SiesmoStream')
