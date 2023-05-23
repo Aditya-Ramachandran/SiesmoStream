@@ -209,6 +209,17 @@ if option == 'QuakeEdu':
     st.write('- When stress along a fault line becomes too great, the rocks suddenly slip, releasing stored energy and causing seismic waves.')
     st.write('- The severity or magnitude of an earthquake is measured using the Richter scale or similar scales, which quantify the energy released.')
     st.write('- Scientists use instruments like seismographs to monitor and analyze earthquakes, improving our understanding of their patterns and impacts.')
+    
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.write(' ')
+    with col2:
+        st.image("Media/Earthquake Process.jpg", width=300)
+    with col3:
+        st.write(' ')
+
+
     st.markdown('---')
 
     st.subheader('Effects of Earthquakes')
