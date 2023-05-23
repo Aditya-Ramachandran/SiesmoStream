@@ -2,8 +2,13 @@
 <br>
 
 [![Made with Plotly](https://img.shields.io/badge/Made%20with-Plotly-1f425f.svg)](https://plotly.com/)  [![Made with Python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)  [![Made with Streamlit](https://img.shields.io/badge/Made%20with-Streamlit-1f425f.svg)](https://www.streamlit.io/) 
-
 <br>
+<br><br>
+
+<p align="center">
+  <img src="Media/Landing_Video.gif">
+</p>
+
 
 
 
