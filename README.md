@@ -21,9 +21,9 @@ So go ahead and give it a try! You might just discover something new and excitin
 
 ## Intallation and usage
 * Clone this repository <br>
-`https://github.com/Aditya-Ramachandran/AQI-Globe.git`
+`https://github.com/Aditya-Ramachandran/SiesmoStream.git`
 * Change the working directory to the cloned repository by running <br>
-`cd AQI-Globe`
+`cd SiesmoStream`
 * Install the required dependencies by running<br>
 `pip install -r requirements.txt`
 * To use the app, run the following command in your terminal<br>
