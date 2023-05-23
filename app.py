@@ -261,7 +261,15 @@ if option == 'About':
     st.markdown('*SeismoStream: Because earthquakes aren\'t just for the birds.*')
     st.markdown('---')
     st.sidebar.markdown('*Learn more about the project*')
-    st.markdown("![Alt Text](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGI0ZWU5ZDcyM2FhOGE3NzVjZmQ2MzIxNzM3NGEyMmNlNmMyYWZjNSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/TdXeFkgX9nHqsZWkX0/giphy.gif)")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown("![Alt Text](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGI0ZWU5ZDcyM2FhOGE3NzVjZmQ2MzIxNzM3NGEyMmNlNmMyYWZjNSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/TdXeFkgX9nHqsZWkX0/giphy.gif)")
+
+    with col2:
+        for i in range(0, 20):
+            st.write(' ')
+        st.markdown("![Alt Text](https://media.giphy.com/media/DfUB71qWDdDuIxk9U3/giphy.gif)")
+    
     # st.video('Landing_video.gif')
 
     st.subheader('Introduction')
