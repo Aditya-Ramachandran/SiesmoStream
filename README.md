@@ -34,4 +34,15 @@ So go ahead and give it a try! You might just discover something new and excitin
 `streamlit run app.py`
 * The app will open in your default browser and you can start visualizing earthquakes
 
+## Credits
+- Earthquake data provided by the USGS API (https://earthquake.usgs.gov/fdsnws/event/1/)
+- Geocoding data provided by the OpenCage Data API (https://opencagedata.com/api)
+
+## Contributing
+Thank you for considering contributing to this project! If you would like to contribute, please make sure to read the [contribution guidelines](CONTRIBUTING.md) before making a pull request.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+
 
