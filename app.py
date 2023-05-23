@@ -196,6 +196,12 @@ if option == 'QuakeView':
 
 if option == 'QuakeEdu':
     st.sidebar.markdown('*Learn earthquake preparedness tips and science behind seismic events*')
+    st.header('QuakeEdu')
+    st.write('Here, we\'ll delve into the fascinating world of earthquakes and explore the forces that shape our planet. Get ready to uncover the basics of earthquakes, from their origins to the intricate geological processes at play.')
+
+    st.write('In this section, we\'ll demystify earthquakes by explaining what they are and how they occur. We\'ll take a closer look at the remarkable concept of plate tectonics, which underlies the movement and interactions of Earth\'s crustal plates. Discover how these dynamic plates can collide, slide past each other, or separate, triggering seismic activity along fault lines.')
+    st.markdown('---')
+
 
 
 if option == 'About':
