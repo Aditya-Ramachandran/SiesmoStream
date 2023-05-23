@@ -202,6 +202,13 @@ if option == 'QuakeEdu':
     st.write('In this section, we\'ll demystify earthquakes by explaining what they are and how they occur. We\'ll take a closer look at the remarkable concept of plate tectonics, which underlies the movement and interactions of Earth\'s crustal plates. Discover how these dynamic plates can collide, slide past each other, or separate, triggering seismic activity along fault lines.')
     st.markdown('---')
 
+    st.subheader('Basics of Earthquake')
+    st.write('- An earthquake is a shaking or trembling of the Earth\'s surface caused by the sudden release of energy in the Earth\'s crust.')
+    st.write('- The movement of tectonic plates, which are large sections of the Earth\'s crust, is responsible for earthquakes.')
+    st.write('- Most earthquakes occur along fault lines, which are fractures or cracks in the Earth\'s crust where significant plate movement takes place.')
+    st.write('- When stress along a fault line becomes too great, the rocks suddenly slip, releasing stored energy and causing seismic waves.')
+    st.write('- The severity or magnitude of an earthquake is measured using the Richter scale or similar scales, which quantify the energy released.')
+    st.write('- Scientists use instruments like seismographs to monitor and analyze earthquakes, improving our understanding of their patterns and impacts.')
 
 
 if option == 'About':
