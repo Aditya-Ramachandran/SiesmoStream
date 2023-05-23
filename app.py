@@ -209,6 +209,15 @@ if option == 'QuakeEdu':
     st.write('- When stress along a fault line becomes too great, the rocks suddenly slip, releasing stored energy and causing seismic waves.')
     st.write('- The severity or magnitude of an earthquake is measured using the Richter scale or similar scales, which quantify the energy released.')
     st.write('- Scientists use instruments like seismographs to monitor and analyze earthquakes, improving our understanding of their patterns and impacts.')
+    st.markdown('---')
+
+    st.subheader('Effects of Earthquakes')
+    st.write('**Ground shaking:**  Earthquakes cause the ground to shake, leading to the collapse of buildings, infrastructure damage, and the potential for injuries or fatalities.')
+    st.write('**Surface rupture:** Some earthquakes can cause visible cracks or displacement along the Earth\'s surface, damaging roads, pipelines, and structures in the affected area.')
+    st.write('**Landslides:** The intense shaking during an earthquake can trigger landslides, resulting in the collapse of slopes and the potential for burying communities and infrastructure.')
+    st.write('**Tsunamis:** Underwater earthquakes can generate tsunamis, which are powerful ocean waves that can devastate coastal areas, causing widespread flooding and destruction.')
+    st.write('**Structural damage:** Buildings and infrastructure can suffer significant damage during earthquakes, compromising their integrity and leading to collapses or unsafe conditions.')
+
 
 
 if option == 'About':
