@@ -210,6 +210,8 @@ if option == 'QuakeEdu':
     st.write('- The severity or magnitude of an earthquake is measured using the Richter scale or similar scales, which quantify the energy released.')
     st.write('- Scientists use instruments like seismographs to monitor and analyze earthquakes, improving our understanding of their patterns and impacts.')
     
+
+    # https://stackoverflow.com/questions/70932538/how-to-center-the-title-and-an-image-in-streamlit    
     col1, col2, col3 = st.columns(3)
 
     with col1:
