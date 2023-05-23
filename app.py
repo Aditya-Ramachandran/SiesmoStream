@@ -212,12 +212,19 @@ if option == 'QuakeEdu':
     st.markdown('---')
 
     st.subheader('Effects of Earthquakes')
-    st.write('**Ground shaking:**  Earthquakes cause the ground to shake, leading to the collapse of buildings, infrastructure damage, and the potential for injuries or fatalities.')
-    st.write('**Surface rupture:** Some earthquakes can cause visible cracks or displacement along the Earth\'s surface, damaging roads, pipelines, and structures in the affected area.')
-    st.write('**Landslides:** The intense shaking during an earthquake can trigger landslides, resulting in the collapse of slopes and the potential for burying communities and infrastructure.')
-    st.write('**Tsunamis:** Underwater earthquakes can generate tsunamis, which are powerful ocean waves that can devastate coastal areas, causing widespread flooding and destruction.')
-    st.write('**Structural damage:** Buildings and infrastructure can suffer significant damage during earthquakes, compromising their integrity and leading to collapses or unsafe conditions.')
+    st.write('- **Ground shaking:**  Earthquakes cause the ground to shake, leading to the collapse of buildings, infrastructure damage, and the potential for injuries or fatalities.')
+    st.write('- **Surface rupture:** Some earthquakes can cause visible cracks or displacement along the Earth\'s surface, damaging roads, pipelines, and structures in the affected area.')
+    st.write('- **Landslides:** The intense shaking during an earthquake can trigger landslides, resulting in the collapse of slopes and the potential for burying communities and infrastructure.')
+    st.write('- **Tsunamis:** Underwater earthquakes can generate tsunamis, which are powerful ocean waves that can devastate coastal areas, causing widespread flooding and destruction.')
+    st.write('- **Structural damage:** Buildings and infrastructure can suffer significant damage during earthquakes, compromising their integrity and leading to collapses or unsafe conditions.')
+    st.markdown('---')
 
+    st.subheader('Earthquake Safety')
+    st.write('- **Secure furniture and heavy objects:** Use brackets, straps, or anchors to secure heavy furniture, appliances, and other objects to prevent them from falling or causing injuries during an earthquake.')
+    st.write('- **Identify safe spots:** Identify safe spots in your home or workplace, such as under sturdy tables or desks, and teach everyone in your household or office to "Drop, Cover, and Hold On" during an earthquake.')
+    st.write('- **Stay away from hazards:** Keep away from windows, glass, mirrors, and other objects that could shatter during an earthquake. Stay clear of heavy furniture or fixtures that could topple over.')
+    st.write('- **Stay informed:** Follow official sources of information, such as local authorities and emergency management agencies, for updates on earthquake warnings, alerts, and safety instructions.')
+    st.write('- **Check for gas and electrical hazards:** After an earthquake, check for gas leaks, electrical damage, and potential hazards like broken wires. If you suspect a gas leak, turn off the main gas valve and immediately leave the area.')
 
 
 if option == 'About':
