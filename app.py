@@ -219,7 +219,6 @@ if option == 'QuakeEdu':
     with col3:
         st.write(' ')
 
-
     st.markdown('---')
 
     st.subheader('Effects of Earthquakes')
@@ -228,6 +227,16 @@ if option == 'QuakeEdu':
     st.write('- **Landslides:** The intense shaking during an earthquake can trigger landslides, resulting in the collapse of slopes and the potential for burying communities and infrastructure.')
     st.write('- **Tsunamis:** Underwater earthquakes can generate tsunamis, which are powerful ocean waves that can devastate coastal areas, causing widespread flooding and destruction.')
     st.write('- **Structural damage:** Buildings and infrastructure can suffer significant damage during earthquakes, compromising their integrity and leading to collapses or unsafe conditions.')
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.image("Media/Landslide.jpg")
+    with col2:
+        st.image("Media/road damage.jpg", width=300)
+    # with col3:
+    #     st.image("Media/structural damage.jpg")
+
     st.markdown('---')
 
     st.subheader('Earthquake Safety')
