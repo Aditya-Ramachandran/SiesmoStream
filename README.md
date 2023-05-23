@@ -11,7 +11,6 @@
 
 
 
-
 ## About 
 If you're anything like me, you're probably fascinated by the powerful forces of nature that can shake the ground beneath our feet. That's why I created this app - to help you explore and visualize earthquake data in a fun and interactive way!
 
